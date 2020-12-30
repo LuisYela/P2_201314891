@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{%block content%}
+  <h1>hola mundo Home</h1>
+  <form action="/uploader" method="POST" enctype="multipart/form-data">
+    <input type="file" name="archivo">
+    <input type="submit">
+  </form>
+{% endblock %}

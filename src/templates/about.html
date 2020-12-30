@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{%block content%}
+<img src="{{url_for('static', filename='default.jpg')}}">
+  <h1>hola desde about</h1>
+  <div class="row">
+    {%if imgs%}
+      {%for i in range(0,imgs|length)%}
+      <div class="card" style="width: 18rem;">
+        <img src="{{url_for('static', filename=imgs[i])}}">
+        <div class="card-body">
+          <h5 class="card-tittle">{{noms[i]}}</h5>
+        </div>
+      </div>
+      {%endfor -%}
+    {%else%}
+      <div class="card">
+        <table>
+          <tr>
+            <td><strong>Universidad</strong></td>
+            <td><strong>exactitud del modelo</strong></td>
+            <td><strong>% encontrados</strong></td>
+            <td><strong>subidos</strong></td>
+            <td><strong>encontrados</strong></td>
+          </tr>
+          <tr>
+            <td>USAC</td>
+            <td>{{eU}} %</td>
+            <td>{{pU}} %</td>
+            <td>{{enU}} </td>
+            <td>{{sU}} </td>
+          </tr>
+          <tr>
+            <td>Landivar</td>
+            <td>{{eL}} %</td>
+            <td>{{pL}} %</td>
+            <td>{{sL}} </td>
+            <td>{{enL}} </td>
+          </tr>
+          <tr>
+            <td>Mariano</td>
+            <td>{{eM}} %</td>
+            <td>{{pM}} %</td>
+            <td>{{sM}} </td>
+            <td>{{enM}} </td>
+          </tr>
+          <tr>
+            <td>Marroquin</td>
+            <td>{{eR}} %</td>
+            <td>{{pR}} %</td>
+            <td>{{sR}}</td>
+            <td>{{enR}}</td>
+          </tr>
+          <tr>
+            <td>Fallos</td>
+            <td>{{eE}} %</td>
+            <td>{{pE}} %</td>
+            <td>{{enE}} </td>
+            <td>{{sE}} </td>
+          </tr>
+          </table>
+      </div>
+    {%endif%}
+{% endblock %}
+<!--
+  
+    <div class="card" style="width: 18rem;">
+      <img src="" class="img-card-top" alt="Responsive image">
+      <div class="card-body">
+        <h5 class="card-tittle">nombre predicho</h5>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="" class="img-card-top" alt="Responsive image">
+      <div class="card-body">
+        <h5 class="card-tittle">nombre predicho</h5>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="" class="img-card-top" alt="Responsive image">
+      <div class="card-body">
+        <h5 class="card-tittle">nombre predicho</h5>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="" class="img-card-top" alt="Responsive image">
+      <div class="card-body">
+        <h5 class="card-tittle">nombre predicho</h5>
+      </div>
+    </div>
+  </div>
+-->
